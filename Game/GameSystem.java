@@ -225,9 +225,8 @@ class Animation extends Ingame {
         return false;
     }
 
-    public void playAnimation(JLabel player, JLabel enemy) {
- 
-        timer = new Timer(1000, e -> moveEnemy(player, enemy, (Timer) e.getSource()));
+    public void playAnimation(JLabel player, JLabel enemy , JRootPane jp , String score) {
+        timer = new Timer(1000, e -> moveEnemy(player, enemy, (Timer) e.getSource() , jp , score));
         startAnimation();
         
     }
@@ -242,17 +241,17 @@ class Animation extends Ingame {
         x_enemy = init_x_enemy;
     }
     
-    public void moveEnemy(JLabel player, JLabel enemy, Timer timer) {
+    public void moveEnemy(JLabel player, JLabel enemy, Timer timer , JRootPane jp , String score) {
         x_enemy -= 50;
         enemy.setBounds(x_enemy, y_enemy, enemy.getWidth(), enemy.getHeight());
             
-        isCol = calculateDistance(player, enemy) ? 1 : 0;
-//        System.out.println(isCol);
+        isCol = calculateDistance(player, enemy) ? 1 : 0 ; 
         if (isCol > 0) {
             animationState = 0 ;
             timer.stop() ;   
-            gameOver() ; 
-            
+            gameOver(jp.getRootPane() , String.valueOf(score)) ; 
+            HomeJFrame hf = new HomeJFrame() ;  
+            hf.show();
         }
     }
     
