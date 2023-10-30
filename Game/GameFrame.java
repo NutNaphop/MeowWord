@@ -4,18 +4,23 @@ import javax.swing.JOptionPane;
 import javax.swing.JRootPane;
 import javax.swing.plaf.RootPaneUI;
 
-
-
 public class GameFrame extends javax.swing.JFrame {
 
     private Ingame ig;
+    private Animation ani;
+    private int enemy_x;
+
     public GameFrame() {
         initComponents();
+        setGameAnimation();
         setGame();
-    }
 
+    }
+    
     public void setGame() {
         ig = new Ingame();
+
+        // game
         ig.RandomNumberGenerator();
         ig.genQuestion();
         ig.setHiscore(textHiScore);
@@ -23,13 +28,34 @@ public class GameFrame extends javax.swing.JFrame {
         ig.setWord(textWord);
         ig.setEngButton1(btAnsLeft);
         ig.setEngButton2(btAnsRight);
+        ig.setPanel(this.rootPane);
+        // Animation 
+        ani.setEnemy(enemy_x);
+        playAnimation();
     }
-    
-    public void nextQuestion(){
-        ig.genQuestion(); 
-        ig.setWord(textWord);
-        ig.setEngButton1(btAnsLeft);
-        ig.setEngButton2(btAnsRight);
+
+    public void setGameAnimation() {
+        ani = new Animation();
+        ani.setInit(playerSprite, zombieSprite);
+        enemy_x = zombieSprite.getX();
+    }
+
+    public void nextQuestion() {
+        if (ig.genQuestion() == -1) {
+            ig.winGame(this.rootPane, textScore.getText());
+            setGame(); // Go to main menu
+        } else {
+            ig.setWord(textWord);
+            ig.setEngButton1(btAnsLeft);
+            ig.setEngButton2(btAnsRight);
+            playAnimation();
+        }
+    }
+
+    public void playAnimation() {
+        System.out.println("AA");
+        ani.setPosition();
+        ani.playAnimation(playerSprite, zombieSprite);
     }
 
     @SuppressWarnings("unchecked")
@@ -37,12 +63,14 @@ public class GameFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         Component_HiScore = new javax.swing.JLabel();
-        Component_Score2 = new javax.swing.JLabel();
+        Component_Score = new javax.swing.JLabel();
         textScore = new javax.swing.JLabel();
         textHiScore = new javax.swing.JLabel();
         btAnsLeft = new javax.swing.JButton();
         btAnsRight = new javax.swing.JButton();
         textWord = new javax.swing.JLabel();
+        playerSprite = new javax.swing.JLabel();
+        zombieSprite = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -51,9 +79,9 @@ public class GameFrame extends javax.swing.JFrame {
         Component_HiScore.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Component_HiScore.setText("Hi-Score");
 
-        Component_Score2.setFont(new java.awt.Font("Segoe UI Semibold", 2, 24)); // NOI18N
-        Component_Score2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Component_Score2.setText("Score");
+        Component_Score.setFont(new java.awt.Font("Segoe UI Semibold", 2, 24)); // NOI18N
+        Component_Score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Component_Score.setText("Score");
 
         textScore.setFont(new java.awt.Font("Segoe UI Semibold", 2, 24)); // NOI18N
         textScore.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -83,6 +111,11 @@ public class GameFrame extends javax.swing.JFrame {
         textWord.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textWord.setText("Word");
 
+        playerSprite.setIcon(new javax.swing.ImageIcon("C:\\Users\\Windows 10\\Downloads\\man_icon-icons.com_50102.png")); // NOI18N
+        playerSprite.setText("jLabel1");
+
+        zombieSprite.setIcon(new javax.swing.ImageIcon(getClass().getResource("/staticfile/14_icon-icons.com_73797+(2).png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,12 +124,9 @@ public class GameFrame extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(textWord, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Component_Score2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Component_Score, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(textScore, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 4, Short.MAX_VALUE))
@@ -106,11 +136,19 @@ public class GameFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Component_HiScore, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textHiScore, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(textHiScore, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(btAnsRight, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)))
-                        .addGap(18, 18, 18))))
+                                .addGap(26, 26, 26))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(playerSprite, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(185, 185, 185)
+                                .addComponent(zombieSprite))
+                            .addComponent(textWord, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,12 +156,16 @@ public class GameFrame extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textScore)
-                    .addComponent(Component_Score2)
+                    .addComponent(Component_Score)
                     .addComponent(Component_HiScore)
                     .addComponent(textHiScore))
                 .addGap(45, 45, 45)
                 .addComponent(textWord, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(372, 372, 372)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(playerSprite)
+                    .addComponent(zombieSprite, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(140, 140, 140)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btAnsLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btAnsRight, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -138,9 +180,14 @@ public class GameFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (ig.checkAns("2")) {
             ig.setScore(textScore);
+            ani.stopAndResetAnimation();
+            ani.setPosition();
             nextQuestion();
-        }else{
-            ig.gameOver(this.rootPane , textScore.getText());
+            ani.startAnimation();
+        } else {
+            ani.stopAndResetAnimation();
+            ig.gameOver(this.rootPane, textScore.getText());
+            ani.setPosition();
             setGame(); // Restart
         }
     }//GEN-LAST:event_btAnsRightActionPerformed
@@ -149,12 +196,16 @@ public class GameFrame extends javax.swing.JFrame {
         // TODO add your handling code here:]
         if (ig.checkAns("1")) {
             ig.setScore(textScore);
+                  ani.stopAndResetAnimation();
+            ani.setPosition();
             nextQuestion();
-        }else {
-            ig.gameOver(this.rootPane ,textScore.getText());
+            ani.startAnimation();
+        } else {
+            ani.stopAndResetAnimation();
+            ig.gameOver(this.rootPane, textScore.getText());
+            ani.setPosition();
             setGame(); // Restart
         }
-
     }//GEN-LAST:event_btAnsLeftActionPerformed
 
     public static void main(String args[]) {
@@ -191,11 +242,13 @@ public class GameFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Component_HiScore;
-    private javax.swing.JLabel Component_Score2;
+    private javax.swing.JLabel Component_Score;
     private javax.swing.JButton btAnsLeft;
     private javax.swing.JButton btAnsRight;
+    private javax.swing.JLabel playerSprite;
     private javax.swing.JLabel textHiScore;
     private javax.swing.JLabel textScore;
     private javax.swing.JLabel textWord;
+    private javax.swing.JLabel zombieSprite;
     // End of variables declaration//GEN-END:variables
 }

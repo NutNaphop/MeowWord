@@ -28,13 +28,9 @@
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="textWord" min="-2" pref="321" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="Component_Score2" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="Component_Score" min="-2" pref="68" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="textScore" min="-2" pref="68" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
@@ -47,13 +43,24 @@
                               <Component id="Component_HiScore" min="-2" pref="104" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="textHiScore" min="-2" pref="68" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="btAnsRight" min="-2" pref="156" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="playerSprite" min="-2" pref="58" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
+                              <Component id="zombieSprite" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="textWord" min="-2" pref="321" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -65,13 +72,18 @@
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="textScore" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Component_Score2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Component_Score" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Component_HiScore" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textHiScore" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
               <Component id="textWord" min="-2" pref="53" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="372" max="-2" attributes="0"/>
+              <EmptySpace pref="168" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="playerSprite" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="zombieSprite" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btAnsLeft" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
                   <Component id="btAnsRight" alignment="3" min="-2" pref="74" max="-2" attributes="0"/>
@@ -91,7 +103,7 @@
         <Property name="text" type="java.lang.String" value="Hi-Score"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="Component_Score2">
+    <Component class="javax.swing.JLabel" name="Component_Score">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI Semibold" size="24" style="2"/>
@@ -147,6 +159,21 @@
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Word"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="playerSprite">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\Windows 10\Downloads\man_icon-icons.com_50102.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="zombieSprite">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/staticfile/14_icon-icons.com_73797+(2).png"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>

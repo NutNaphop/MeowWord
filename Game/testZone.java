@@ -1,27 +1,50 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class testZone {
+    private JFrame frame;
+    private JLabel movingLabel;
+    private Timer timer;
+    private int x, y; // Initial position of the label
+
+    public testZone() {
+        frame = new JFrame("Moving JLabel");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 400);
+        frame.setLayout(null); // Set layout to null for manual positioning
+
+        movingLabel = new JLabel("Moving Label");
+        x = 50; // Initial x-position
+        y = 50; // Initial y-position
+        movingLabel.setBounds(x, y, 100, 30); // Set the initial position and size
+        frame.add(movingLabel);
+
+        timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Update the label's position
+                x += 10; // Move 10 pixels to the right
+                y += 10; // Move 10 pixels down
+                movingLabel.setBounds(x, y, 100, 30);
+
+                // Repaint the frame to reflect the updated position
+                frame.repaint();
+            }
+        });
+
+        timer.start();
+
+        frame.setVisible(true);
+    }
+
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("LayeredPane Example");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(400, 300);
-
-            JLayeredPane layeredPane = new JLayeredPane();
-            frame.add(layeredPane);
-
-            JPanel panel1 = new JPanel();
-            panel1.setBackground(Color.RED);
-            panel1.setBounds(50, 50, 200, 150);
-            layeredPane.add(panel1, JLayeredPane.DEFAULT_LAYER);
-
-            JPanel panel2 = new JPanel();
-            panel2.setBackground(Color.BLUE);
-            panel2.setBounds(100, 100, 200, 150);
-            layeredPane.add(panel2, JLayeredPane.PALETTE_LAYER);
-
-            frame.setVisible(true);
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new testZone();
+            }
         });
     }
 }
