@@ -122,8 +122,8 @@ class Ingame extends GameSystem {
     private String EngWord1;
     private String EngWord2;
     private String answer;
-    private int score;
-
+    private int score , hiscore;
+    
     public int genQuestion() {
         int index_question = getNextRandomNumber();
         System.out.println(index_question);
@@ -194,9 +194,10 @@ class Ingame extends GameSystem {
     public void gameOver(JRootPane jp, String score) {
 //        JOptionPane.showMessageDialog(jp.getParent(), "Hello");
         Object[] options = {"OK"};
+        hiscore = (Integer.parseInt(score) > getHiScore())? Integer.parseInt(score) : getHiScore() ; 
         int a = JOptionPane.showOptionDialog(
                 jp.getParent(),
-                "Game Over" + "\nYour Score : " + score + "\nHigh-Score : " + getHiScore(),
+                "Game Over" + "\nYour Score : " + score + "\nHigh-Score : " + hiscore,
                 "It's end!!!",
                 JOptionPane.YES_OPTION,
                 JOptionPane.PLAIN_MESSAGE, null,
@@ -212,9 +213,10 @@ class Ingame extends GameSystem {
 
     public void gameOver() {
         Object[] options = {"OK"};
+        hiscore = (score > getHiScore()) ? score : getHiScore() ; 
         int a = JOptionPane.showOptionDialog(
                 this.Screen,
-                "Game Over" + "\nYour Score : " + score + "\nHigh-Score : " + getHiScore(),
+                "Game Over" + "\nYour Score : " + score + "\nHigh-Score : " + hiscore,
                 "It's end!!!",
                 JOptionPane.YES_OPTION,
                 JOptionPane.PLAIN_MESSAGE, null,

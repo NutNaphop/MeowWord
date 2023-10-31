@@ -3,10 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Game;
+
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.net.URI;
 import java.io.File;
+
 /**
  *
  * @author USER
@@ -21,7 +23,7 @@ public class HomeJFrame extends javax.swing.JFrame {
 //        System.out.println(directory.getAbsolutePath());
         initComponents();
         GameSystem.playBackgroundMusic("Sound\\MainMenu.wav");
-        ImageIcon ic = new ImageIcon("src/staticfile/icon.png") ;
+        ImageIcon ic = new ImageIcon("src/staticfile/icon.png");
         this.setIconImage(ic.getImage());
     }
 
@@ -111,6 +113,8 @@ public class HomeJFrame extends javax.swing.JFrame {
         GameSystem.stopBackgroundMusic();
         GameSystem.playSound("Sound\\button_press.wav"); // click
         GameSystem.stopSound();
+        GameSystem.playSound("Sound\\cat.wav");
+        GameSystem.stopSound();
         GameSystem.Delay();
         GameFrame jfgame = new GameFrame();
         jfgame.show();
@@ -140,7 +144,7 @@ public class HomeJFrame extends javax.swing.JFrame {
     private void StartButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseExited
         // TODO add your handling code here:
         GameSystem.stopSound();
-        StartButton.setBackground(new Color(255,245,235));
+        StartButton.setBackground(new Color(255, 245, 235));
     }//GEN-LAST:event_StartButtonMouseExited
 
     private void ExitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseEntered
@@ -152,7 +156,7 @@ public class HomeJFrame extends javax.swing.JFrame {
     private void ExitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseExited
         // TODO add your handling code here:
         GameSystem.stopSound();
-        ExitButton.setBackground(new Color(255,245,235));
+        ExitButton.setBackground(new Color(255, 245, 235));
     }//GEN-LAST:event_ExitButtonMouseExited
 
     /**
