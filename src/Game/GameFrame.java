@@ -19,7 +19,7 @@ public class GameFrame extends javax.swing.JFrame {
         initComponents();
         setGameAnimation();
         setGame();
-        ImageIcon ic = new ImageIcon("src/staticfile/icon.png");
+        ImageIcon ic = new ImageIcon("src/staticfile/icon.png") ;
         this.setIconImage(ic.getImage());
     }
 
@@ -89,7 +89,6 @@ public class GameFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("MeowWord");
         setMaximumSize(new java.awt.Dimension(393, 665));
         setMinimumSize(new java.awt.Dimension(393, 665));
         setResizable(false);
@@ -198,11 +197,8 @@ public class GameFrame extends javax.swing.JFrame {
         } else {
             GameSystem.playSound("Sound\\GameOverBeep.wav");
             GameSystem.playSound("Sound\\gameOverCat.wav");
-            GameSystem.stopSound();
             ani.stopAndResetAnimation();
             ig.gameOver(this.rootPane, textScore.getText());
-            GameSystem.stopSound();
-            GameSystem.stopSound();
             ani.setPosition();
             HomeJFrame hf = new HomeJFrame();
             hf.show();
@@ -223,8 +219,8 @@ public class GameFrame extends javax.swing.JFrame {
             GameSystem.playSound("Sound\\gameOverCat.wav");
             ani.stopAndResetAnimation();
             ig.gameOver(this.rootPane, textScore.getText());
-            GameSystem.stopSound();
-            GameSystem.stopSound();
+                        GameSystem.stopSound();
+                                    GameSystem.stopSound();
             ani.setPosition();
             HomeJFrame hf = new HomeJFrame();
             hf.show();
@@ -235,24 +231,24 @@ public class GameFrame extends javax.swing.JFrame {
     private void btAnsLeftMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAnsLeftMouseEntered
         // TODO add your handling code here:
         GameSystem.playSound("Sound\\selected_choice.wav");
-        btAnsLeft.setBackground(new Color(248, 234, 147));
+        btAnsLeft.setBackground(new Color(248,234,147));
     }//GEN-LAST:event_btAnsLeftMouseEntered
 
     private void btAnsRightMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAnsRightMouseEntered
         // TODO add your handling code here:
         GameSystem.playSound("Sound\\selected_choice.wav");
-        btAnsRight.setBackground(new Color(248, 234, 147));
-
+         btAnsRight.setBackground(new Color(248,234,147));
+        
     }//GEN-LAST:event_btAnsRightMouseEntered
 
     private void btAnsLeftMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAnsLeftMouseExited
         // TODO add your handling code here:
-        btAnsLeft.setBackground(new Color(249, 243, 204));
+        btAnsLeft.setBackground(new Color(249,243,204));
     }//GEN-LAST:event_btAnsLeftMouseExited
 
     private void btAnsRightMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAnsRightMouseExited
         // TODO add your handling code here:
-        btAnsRight.setBackground(new Color(249, 243, 204));
+        btAnsRight.setBackground(new Color(249,243,204));
     }//GEN-LAST:event_btAnsRightMouseExited
 
     public static void main(String args[]) {
