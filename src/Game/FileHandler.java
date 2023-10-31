@@ -94,11 +94,11 @@ public class FileHandler {
 }
 
 
-//class Main {
-//
-//    public static void main(String[] args) throws Exception {
-//        FileHandler cnb = new FileHandler();
-//        cnb.showData(cnb.getWordList());
-//        cnb.ReadHighScore();
-//    }
-//}
+class Main {
+
+    public static void main(String[] args) throws Exception {
+        FileHandler cnb = new FileHandler();
+        cnb.showData(cnb.getWordList());
+        cnb.ReadHighScore();
+    }
+}
