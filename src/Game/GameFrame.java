@@ -47,17 +47,23 @@ public class GameFrame extends javax.swing.JFrame {
         enemy_x = zombieSprite.getX();
     }
 
-    public void nextQuestion() {
+    public int nextQuestion() {
         if (ig.genQuestion() == -1) {
+            GameSystem.playSound("Sound\\win.wav");
+            ani.stopAndResetAnimation();
             ig.winGame(this.rootPane, textScore.getText());
+            ani.setPosition();
             HomeJFrame hf = new HomeJFrame();
             hf.show();
+            GameSystem.stopSound();
             dispose();
+            return -1;
         } else {
             ig.setWord(textWord);
             ig.setEngButton1(btAnsLeft);
             ig.setEngButton2(btAnsRight);
             playAnimation();
+            return 1 ; 
         }
     }
 
@@ -187,8 +193,8 @@ public class GameFrame extends javax.swing.JFrame {
             GameSystem.playSound("Sound\\CorrectChoice.wav");
             ani.stopAndResetAnimation();
             ani.setPosition();
-            nextQuestion();
-            ani.startAnimation();
+            if(nextQuestion() != -1 )ani.startAnimation();
+            
         } else {
             GameSystem.playSound("Sound\\GameOverBeep.wav");
             GameSystem.playSound("Sound\\gameOverCat.wav");
@@ -211,8 +217,7 @@ public class GameFrame extends javax.swing.JFrame {
             GameSystem.playSound("Sound\\CorrectChoice.wav");
             ani.stopAndResetAnimation();
             ani.setPosition();
-            nextQuestion();
-            ani.startAnimation();
+            if(nextQuestion() != -1 ) ani.startAnimation();
         } else {
             GameSystem.playSound("Sound\\GameOverBeep.wav");
             GameSystem.playSound("Sound\\gameOverCat.wav");

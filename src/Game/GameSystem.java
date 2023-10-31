@@ -223,7 +223,6 @@ class Ingame extends GameSystem {
                 options,
                 options[0]
         );
-                   GameSystem.stopSound();
         System.out.println(a);
     }
 

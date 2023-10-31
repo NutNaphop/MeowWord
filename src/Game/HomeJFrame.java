@@ -44,6 +44,8 @@ public class HomeJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MeowWord");
+        setMaximumSize(new java.awt.Dimension(393, 665));
+        setMinimumSize(new java.awt.Dimension(393, 665));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -102,7 +104,7 @@ public class HomeJFrame extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/staticfile/BG7.png"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(-60, -70, 570, 780);
+        jLabel4.setBounds(-60, -70, 500, 780);
 
         setSize(new java.awt.Dimension(407, 672));
         setLocationRelativeTo(null);
