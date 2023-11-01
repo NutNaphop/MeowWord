@@ -5,7 +5,11 @@
 package Game;
 
 import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import java.awt.Image ; 
+import java.awt.Point;
 import java.net.URI;
 import java.io.File;
 
@@ -13,20 +17,26 @@ import java.io.File;
  *
  * @author USER
  */
-public class HomeJFrame extends javax.swing.JFrame {
 
+public class HomeJFrame extends javax.swing.JFrame {
     /**
      * Creates new form GameJFrame
      */
     public HomeJFrame() {
-//        File directory = new File("src/staticfile/icon.png");
-//        System.out.println(directory.getAbsolutePath());
         initComponents();
+        setCustomCursor();
         GameSystem.playBackgroundMusic("resources/Sound/MainMenu.wav");
         ImageIcon ic = new ImageIcon("resources/Icon/icon.png");
         this.setIconImage(ic.getImage());
     }
-
+    
+    public void setCustomCursor(){
+        Toolkit tk = Toolkit.getDefaultToolkit() ; 
+        Image img = tk.getImage("resources/Icon/cursor.png") ; 
+        Point p = new Point(0, 0) ; 
+        Cursor c = tk.createCustomCursor(img, p, "resources/Icon/cursor.png") ; 
+        setCursor(c);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

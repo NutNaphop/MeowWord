@@ -1,6 +1,10 @@
 package Game;
 
 import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,12 +21,21 @@ public class GameFrame extends javax.swing.JFrame {
 
     public GameFrame() {
         initComponents();
+        setCustomCursor();
         setGameAnimation();
         setGame();
         ImageIcon ic = new ImageIcon("resources/Icon/icon.png");
         this.setIconImage(ic.getImage());
     }
 
+    public void setCustomCursor(){
+        Toolkit tk = Toolkit.getDefaultToolkit() ; 
+        Image img = tk.getImage("resources/Icon/cursor.png") ; 
+        Point p = new Point(0, 0) ; 
+        Cursor c = tk.createCustomCursor(img, p, "resources/Icon/cursor.png") ; 
+        setCursor(c);
+    }
+    
     public void setGame() {
         ig = new Ingame();
 

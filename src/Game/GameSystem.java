@@ -312,10 +312,14 @@ class Animation {
         if (isCol > 0) {
             animationState = 0;
             timer.stop();
+            GameSystem.playSound("resources\\Sound\\GameOverBeep.wav");
+            GameSystem.playSound("resources\\Sound\\gameOverCat.wav");
             ig.gameOver(jp.getRootPane(), String.valueOf(score));
             System.out.println("OVER");
             HomeJFrame hf = new HomeJFrame();
             jf.dispose();
+            GameSystem.stopSound();
+            GameSystem.stopSound();
             hf.show();
         }
     }
