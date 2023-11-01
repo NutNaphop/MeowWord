@@ -1,12 +1,12 @@
-## Meow Word game
+# Meow Word game
 Meow Meow Meow Meow!!!
-## Tools 
+# Tools 
 Java 
 JDK19 
 SQLite
-## Description 
+# Description 
 This project is word quiz game 
-## How to run it 
+# How to run it 
 .........
 
 
