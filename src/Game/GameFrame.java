@@ -19,7 +19,7 @@ public class GameFrame extends javax.swing.JFrame {
         initComponents();
         setGameAnimation();
         setGame();
-        ImageIcon ic = new ImageIcon("src/staticfile/icon.png");
+        ImageIcon ic = new ImageIcon("resources/Icon/icon.png");
         this.setIconImage(ic.getImage());
     }
 
@@ -49,7 +49,7 @@ public class GameFrame extends javax.swing.JFrame {
 
     public int nextQuestion() {
         if (ig.genQuestion() == -1) {
-            GameSystem.playSound("Sound\\win.wav");
+            GameSystem.playSound("resources\\Sound\\win.wav");
             ani.stopAndResetAnimation();
             ig.winGame(this.rootPane, textScore.getText());
             ani.setPosition();
@@ -190,14 +190,14 @@ public class GameFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (ig.checkAns("2")) {
             ig.setScore(textScore);
-            GameSystem.playSound("Sound\\CorrectChoice.wav");
+            GameSystem.playSound("resources\\Sound\\CorrectChoice.wav");
             ani.stopAndResetAnimation();
             ani.setPosition();
             if(nextQuestion() != -1 )ani.startAnimation();
             
         } else {
-            GameSystem.playSound("Sound\\GameOverBeep.wav");
-            GameSystem.playSound("Sound\\gameOverCat.wav");
+            GameSystem.playSound("resources\\Sound\\GameOverBeep.wav");
+            GameSystem.playSound("resources\\Sound\\gameOverCat.wav");
             GameSystem.stopSound();
             ani.stopAndResetAnimation();
             ig.gameOver(this.rootPane, textScore.getText());
@@ -214,13 +214,13 @@ public class GameFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (ig.checkAns("1")) {
             ig.setScore(textScore);
-            GameSystem.playSound("Sound\\CorrectChoice.wav");
+            GameSystem.playSound("resources\\Sound\\CorrectChoice.wav");
             ani.stopAndResetAnimation();
             ani.setPosition();
             if(nextQuestion() != -1 ) ani.startAnimation();
         } else {
-            GameSystem.playSound("Sound\\GameOverBeep.wav");
-            GameSystem.playSound("Sound\\gameOverCat.wav");
+            GameSystem.playSound("resources\\Sound\\GameOverBeep.wav");
+            GameSystem.playSound("resources\\Sound\\gameOverCat.wav");
             ani.stopAndResetAnimation();
             ig.gameOver(this.rootPane, textScore.getText());
             GameSystem.stopSound();
@@ -234,13 +234,13 @@ public class GameFrame extends javax.swing.JFrame {
 
     private void btAnsLeftMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAnsLeftMouseEntered
         // TODO add your handling code here:
-        GameSystem.playSound("Sound\\selected_choice.wav");
+        GameSystem.playSound("resources\\Sound\\selected_choice.wav");
         btAnsLeft.setBackground(new Color(248, 234, 147));
     }//GEN-LAST:event_btAnsLeftMouseEntered
 
     private void btAnsRightMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAnsRightMouseEntered
         // TODO add your handling code here:
-        GameSystem.playSound("Sound\\selected_choice.wav");
+        GameSystem.playSound("resources\\Sound\\selected_choice.wav");
         btAnsRight.setBackground(new Color(248, 234, 147));
 
     }//GEN-LAST:event_btAnsRightMouseEntered

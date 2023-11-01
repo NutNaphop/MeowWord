@@ -22,8 +22,8 @@ public class HomeJFrame extends javax.swing.JFrame {
 //        File directory = new File("src/staticfile/icon.png");
 //        System.out.println(directory.getAbsolutePath());
         initComponents();
-        GameSystem.playBackgroundMusic("Sound\\MainMenu.wav");
-        ImageIcon ic = new ImageIcon("src/staticfile/icon.png");
+        GameSystem.playBackgroundMusic("resources/Sound/MainMenu.wav");
+        ImageIcon ic = new ImageIcon("resources/Icon/icon.png");
         this.setIconImage(ic.getImage());
     }
 
@@ -113,9 +113,9 @@ public class HomeJFrame extends javax.swing.JFrame {
     private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
         // TODO add your handling code here:
         GameSystem.stopBackgroundMusic();
-        GameSystem.playSound("Sound\\button_press.wav"); // click
+        GameSystem.playSound("resources/Sound/button_press.wav"); // click
         GameSystem.stopSound();
-        GameSystem.playSound("Sound\\cat.wav");
+        GameSystem.playSound("resources/Sound/cat.wav");
         GameSystem.stopSound();
         GameSystem.Delay();
         GameFrame jfgame = new GameFrame();
@@ -126,7 +126,7 @@ public class HomeJFrame extends javax.swing.JFrame {
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
         // TODO add your handling code here:
         GameSystem.stopBackgroundMusic();
-        GameSystem.playSound("Sound\\button_press.wav");
+        GameSystem.playSound("resources/Sound/button_press.wav");
         GameSystem.stopSound();
         GameSystem.Delay();
         System.exit(0);
@@ -139,7 +139,7 @@ public class HomeJFrame extends javax.swing.JFrame {
 
     private void StartButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseEntered
         // TODO add your handling code here:
-        GameSystem.playSound("Sound\\hover.wav");
+        GameSystem.playSound("resources/Sound/hover.wav");
         StartButton.setBackground(new Color(130, 224, 170));
     }//GEN-LAST:event_StartButtonMouseEntered
 
@@ -151,7 +151,7 @@ public class HomeJFrame extends javax.swing.JFrame {
 
     private void ExitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitButtonMouseEntered
         // TODO add your handling code here:
-        GameSystem.playSound("Sound\\hover.wav");
+        GameSystem.playSound("resources/Sound/hover.wav");
         ExitButton.setBackground(new Color(236, 112, 99));
     }//GEN-LAST:event_ExitButtonMouseEntered
 
