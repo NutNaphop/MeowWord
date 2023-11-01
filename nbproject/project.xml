@@ -4,7 +4,7 @@
     <configuration>
         <buildExtensions xmlns="http://www.netbeans.org/ns/ant-build-extender/1"/>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
-            <name>WordQuizGame</name>
+            <name>MeowWord</name>
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>
