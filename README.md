@@ -9,7 +9,7 @@ SQLite
 # Description 
 This project is word quiz game 
 # How to run it 
-Dowload An run on other IDE or run on cmd 
+Dowload then run on other IDE or run on cmd 
 If you dont want to run a code you can dowload game from this 
 https://drive.google.com/file/d/1Cyq8HXoF1cidsJG_WP4weH2TXTzzlcZ9/view?usp=drive_link
 
