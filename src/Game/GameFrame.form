@@ -134,14 +134,14 @@
     <Component class="javax.swing.JLabel" name="textWord">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="TH Krub" size="48" style="1"/>
+          <Font name="Angsana New" size="48" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Word"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1" y="150" width="390" height="110"/>
+          <AbsoluteConstraints x="1" y="150" width="380" height="110"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -172,7 +172,7 @@
     <Component class="javax.swing.JLabel" name="textComponent">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="TH Krub" size="36" style="1"/>
+          <Font name="Angsana New" size="42" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="&#xe04;&#xe4d;&#xe32;&#xe19;&#xe35;&#xe49;&#xe04;&#xe37;&#xe2d;&#xe04;&#xe4d;&#xe32;&#xe27;&#xe48;&#xe32;&#xe2d;&#xe30;&#xe44;&#xe23; ?"/>

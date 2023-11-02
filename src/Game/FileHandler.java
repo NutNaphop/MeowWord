@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +14,7 @@ public class FileHandler {
     private String thWord, engWord1, engWord2, answer;
     private Map<Integer, Map<String, String>> wordMapList;
     private int len;
-    int Highscore;
+    private int Highscore;
 
     public FileHandler() {
         try {
@@ -37,6 +35,7 @@ public class FileHandler {
                 storeData(n_question, thWord, engWord1, engWord2, answer);
                 len++;
             }
+            conn.close();
         } catch (Exception e) {
             System.out.println("Cannot Connect to database Error : " + e);
         }

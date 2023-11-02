@@ -279,7 +279,7 @@ class Animation {
     }
 
     public boolean calculateDistance(JLabel player, JLabel enemy) {
-        int player_dis = player.getX() + 10;
+        int player_dis = player.getX() + 60;
         int enemy_dis = enemy.getX();
         if (player_dis >= enemy_dis) {
             System.out.println("Game Over");
@@ -291,7 +291,6 @@ class Animation {
     public void playAnimation(JLabel player, JLabel enemy, JRootPane jp, String score, JFrame jf) {
         timer = new Timer(1000, e -> moveEnemy(player, enemy, (Timer) e.getSource(), jp, score, jf));
         startAnimation();
-
     }
 
     public void startAnimation() {

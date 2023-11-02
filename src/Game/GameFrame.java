@@ -6,18 +6,14 @@ import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JRootPane;
-import javax.swing.Timer;
-import javax.swing.plaf.RootPaneUI;
+
 
 public class GameFrame extends javax.swing.JFrame {
 
     private Ingame ig;
     private Animation ani;
     private int enemy_x;
-    private GameFrame currentFrame = this;
+    private final GameFrame currentFrame = this;
 
     public GameFrame() {
         initComponents();
@@ -103,7 +99,6 @@ public class GameFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MeowWord");
-        setMaximumSize(new java.awt.Dimension(393, 665));
         setMinimumSize(new java.awt.Dimension(393, 665));
         setResizable(false);
         getContentPane().setLayout(null);
@@ -171,11 +166,11 @@ public class GameFrame extends javax.swing.JFrame {
         getContentPane().add(btAnsRight);
         btAnsRight.setBounds(90, 540, 219, 54);
 
-        textWord.setFont(new java.awt.Font("TH Krub", 1, 48)); // NOI18N
+        textWord.setFont(new java.awt.Font("Angsana New", 1, 48)); // NOI18N
         textWord.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textWord.setText("Word");
         getContentPane().add(textWord);
-        textWord.setBounds(1, 150, 390, 110);
+        textWord.setBounds(1, 150, 380, 110);
 
         playerSprite.setIcon(new javax.swing.ImageIcon(getClass().getResource("/staticfile/Rat.png"))); // NOI18N
         getContentPane().add(playerSprite);
@@ -185,7 +180,7 @@ public class GameFrame extends javax.swing.JFrame {
         getContentPane().add(zombieSprite);
         zombieSprite.setBounds(270, 360, 96, 88);
 
-        textComponent.setFont(new java.awt.Font("TH Krub", 1, 36)); // NOI18N
+        textComponent.setFont(new java.awt.Font("Angsana New", 0, 42)); // NOI18N
         textComponent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textComponent.setText("คํานี้คือคําว่าอะไร ?");
         getContentPane().add(textComponent);
