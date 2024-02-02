@@ -11,7 +11,6 @@ This project is word quiz game
 # How to run it 
 Dowload then run on other IDE or run on cmd 
 If you dont want to run a code you can dowload game from this 
-https://drive.google.com/file/d/1Cyq8HXoF1cidsJG_WP4weH2TXTzzlcZ9/view?usp=drive_link
-
+https://drive.google.com/drive/folders/1ncyGkk5NwasLOHwlsU7Ji6UO1ZSIeYkb
 
 
