@@ -1,16 +1,56 @@
+# Meow Word
 
-![alt text](https://media.discordapp.net/attachments/1044084393817415730/1169286080697217114/img-MCVron1W1Ne6Zpy5h9dkA.png?ex=6554d985&is=65426485&hm=502a885101abcf2251079089d056607ac7554576eb8185291b0a9a08dc20d7a6&=&width=960&height=640)
-# Meow Word game
-Meow Meow Meow Meow!!!
-# Tools 
-Java 
-JDK19 
-SQLite
-# Description 
-This project is word quiz game 
-# How to run it 
-Dowload then run on other IDE or run on cmd 
-If you dont want to run a code you can dowload game from this 
-https://drive.google.com/drive/folders/1ncyGkk5NwasLOHwlsU7Ji6UO1ZSIeYkb
+Meow Word is a fun and educational English vocabulary game. Players take on the role of a mouse, tasked with selecting the correct translations of given English words. The game is a race against time, as a cat closes in on the player!  
 
+- **Correct answers**: The cat moves backward.
+- **Incorrect answers or no answer**: The cat moves closer.
+- The game ends when the cat catches the mouse.
 
+## Features
+
+- Interactive vocabulary-building gameplay.
+- Designed for English learners of all levels.
+- Cute and engaging visuals with a mouse vs. cat theme.
+
+## Built With
+
+- **Java SDK 19**
+- **SQLite** for storing word data and translations.
+
+---
+
+## Installation Guide
+
+Follow these steps to set up and run the Meow Word project on your local machine:
+
+### Prerequisites
+
+1. Ensure you have **Java SDK 19** installed on your system. You can download it from [Oracle's Java Downloads](https://www.oracle.com/java/technologies/javase-downloads.html).
+2. Install **SQLite** for managing the game's database. Download from [SQLite Downloads](https://www.sqlite.org/download.html).
+
+### Steps to Install
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/NutNaphop/MeowWord.git
+    cd meow-word
+    ```
+2. **If you use Netbean you can open with ant and build it Directly**:
+
+3. **If not unfortunately I can find a way to install it now but you can open it in GAME_EXE**
+    - Extract a file
+    - Open program "Meow Word" ( Without Icon )
+    ( IDK How can this method work sorry ;-;)
+---
+
+## Usage
+
+1. Launch the game.
+2. Answer the vocabulary questions by selecting the correct translation.
+3. Avoid getting caught by the cat!
+
+---
+
+## Screenshots
+![Gameplay](screenshot/image.png)
+---
