@@ -37,10 +37,9 @@ Follow these steps to set up and run the Meow Word project on your local machine
     ```
 2. **If you use Netbean you can open with ant and build it Directly**:
 
-3. **If not unfortunately I can find a way to install it now but you can open it in GAME_EXE**
+3. **If not unfortunately I can find a way to install it now but you can download Directly in release**
     - Extract a file
-    - Open program "Meow Word" ( Without Icon )
-    ( IDK How can this method work sorry ;-;)
+    - Open program "Meow Word.jar"
 ---
 
 ## Usage
